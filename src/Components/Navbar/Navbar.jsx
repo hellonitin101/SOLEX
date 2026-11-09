@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 const Navbar = ({ wishlist, cart }) => {
 
     const [menuOpen, setMenuOpen] = useState(false)
-
     return (
         <div className='fixed top-0 left-0 w-full z-50'>
 
@@ -31,6 +30,10 @@ const Navbar = ({ wishlist, cart }) => {
 
                         <Link to="/viewall" className="text-gray-700 font-medium hover:text-[#C49A5A] transition">
                             Products
+                        </Link>
+
+                        <Link to="/contact" className="text-gray-700 font-medium hover:text-[#C49A5A] transition">
+                            Contact Us
                         </Link>
 
                     </div>
@@ -83,6 +86,16 @@ const Navbar = ({ wishlist, cart }) => {
                         >
                             Products
                         </Link>
+
+                        <Link
+                            to="/contact"
+                            onClick={() => setMenuOpen(false)}
+                            className="text-gray-700 font-medium hover:text-[#C49A5A]"
+                        >
+                            Contact Us
+                        </Link>
+
+
 
                     </div>
                 )}

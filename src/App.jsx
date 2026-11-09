@@ -5,6 +5,7 @@ import Footer from './Components/Footer/Footer'
 import Navbar from './Components/Navbar/Navbar'
 import Home from './Components/Home/Home'
 import Wishlist from './Components/Wishlist/Wishlist'
+import Contact from './Components/Contact/Contact'
 import Cart from './Components/Cart/Cart'
 import Viewall from './Components/All-Product/Viewall'
 import Popup from './Components/Add/Popup'
@@ -100,7 +101,11 @@ const App = () => {
             }
           />
 
+          <Route path='/contact' element={<Contact />} />
+
         </Routes>
+
+
       </div>
 
       <Footer />

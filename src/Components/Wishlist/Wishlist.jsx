@@ -81,7 +81,7 @@ const Wishlist = ({ wishlist, setWishlist }) => {
                                 setWishlist(wishlist.filter((item) => item.id !== e.id))
                             }
                         >
-                            <Heart size={50} fill='#E1B77F' />
+                            <Heart size={30} fill='#FF0000' />
                         </button>
 
                     </div>

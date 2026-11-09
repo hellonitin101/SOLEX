@@ -3,6 +3,7 @@ import Hero from '../Hero/Hero'
 import Brand from '../Brand/Brand'
 import Product from '../Product/Product'
 import Sorting from '../Sorting/Sorting'
+import Contact from '../Contact/Contact'
 import Features from '../Feature/Features'
 
 
@@ -18,7 +19,7 @@ const Home = ({
 }) => {
 
     return (
-        <div>
+        <div className='bg-[#F8F7F4]'>
             <Hero />
             <Brand />
 
@@ -39,6 +40,8 @@ const Home = ({
             />
 
             <Features />
+
+            <Contact />
         </div>
     )
 }

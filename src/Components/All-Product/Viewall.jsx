@@ -26,8 +26,7 @@ const Viewall = ({ wishlist, setWishlist, cart, setCart }) => {
     }
 
     return (
-        <div className='w-full px-4 md:px-10 py-10'>
-
+        <div className='w-full bg-[#F8F7F4] px-4 md:px-10 py-10'>
             <h1 className='text-3xl md:text-4xl font-bold text-gray-900 mb-8'>
                 All <span className='text-[#C99B60]'>Products</span>
             </h1>
@@ -54,14 +53,14 @@ const Viewall = ({ wishlist, setWishlist, cart, setCart }) => {
                             </span>
 
                             <button
-                                className='absolute top-3 right-4 rounded-full text-[#E1B77F] cursor-pointer'
+                                className='absolute top-3 right-4 rounded-full text-[#FF0000] cursor-pointer'
                                 onClick={() => toggleWishlist(e)}
                             >
                                 <Heart
-                                    size={50}
+                                    size={30}
                                     fill={
                                         wishlist.some((item) => item.id === e.id)
-                                            ? '#E1B77F'
+                                            ? '#FF0000'
                                             : '#fff'
                                     }
                                 />

@@ -72,14 +72,14 @@ const Product = ({
                             </span>
 
                             <button
-                                className='absolute top-3 right-4 rounded-full text-[#E1B77F] cursor-pointer'
+                                className='absolute top-3 right-4 rounded-full text-[#FF0000] cursor-pointer'
                                 onClick={() => toggleWishlist(e)}
                             >
                                 <Heart
-                                    size={50}
+                                    size={30}
                                     fill={
                                         wishlist.some((item) => item.id === e.id)
-                                            ? '#E1B77F'
+                                            ? '#FF0000'
                                             : '#fff'
                                     }
                                 />
