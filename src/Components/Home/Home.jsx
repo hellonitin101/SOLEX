@@ -15,7 +15,8 @@ const Home = ({
     wishlist,
     setWishlist,
     cart,
-    setCart
+    setCart,
+    search
 }) => {
 
     return (
@@ -37,6 +38,7 @@ const Home = ({
                 setWishlist={setWishlist}
                 cart={cart}
                 setCart={setCart}
+                search={search}
             />
 
             <Features />

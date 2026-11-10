@@ -11,12 +11,14 @@ import Viewall from './Components/All-Product/Viewall'
 import Popup from './Components/Add/Popup'
 
 import { Toaster } from 'react-hot-toast'
+import About from './Components/About/About'
 
 
 const App = () => {
 
   const [company, setCompany] = useState('All')
   const [category, setCategory] = useState('All')
+  const [search, setSearch] = useState('')
 
   // Wishlist Local Storage se load
   const [wishlist, setWishlist] = useState(() => {
@@ -43,7 +45,7 @@ const App = () => {
   return (
     <BrowserRouter>
 
-      <Navbar wishlist={wishlist} cart={cart} />
+      <Navbar wishlist={wishlist} cart={cart} search={search} setSearch={setSearch} />
 
       <Toaster position="top-center" />
 
@@ -65,6 +67,7 @@ const App = () => {
                 setWishlist={setWishlist}
                 cart={cart}
                 setCart={setCart}
+                search={search}
               />
             }
           />
@@ -97,9 +100,12 @@ const App = () => {
                 setWishlist={setWishlist}
                 cart={cart}
                 setCart={setCart}
+                search={search}
               />
             }
           />
+
+          <Route path='/about' element={<About />} />
 
           <Route path='/contact' element={<Contact />} />
 
