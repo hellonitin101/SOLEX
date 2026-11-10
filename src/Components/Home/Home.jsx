@@ -1,3 +1,4 @@
+
 import React from 'react'
 import Hero from '../Hero/Hero'
 import Brand from '../Brand/Brand'
@@ -5,7 +6,6 @@ import Product from '../Product/Product'
 import Sorting from '../Sorting/Sorting'
 import Contact from '../Contact/Contact'
 import Features from '../Feature/Features'
-
 
 const Home = ({
     company,
@@ -20,8 +20,10 @@ const Home = ({
 }) => {
 
     return (
-        <div className='bg-[#F8F7F4]'>
+        <div className='w-full min-h-screen bg-[#222222] text-white'>
+
             <Hero />
+
             <Brand />
 
             <Sorting
@@ -44,6 +46,7 @@ const Home = ({
             <Features />
 
             <Contact />
+
         </div>
     )
 }

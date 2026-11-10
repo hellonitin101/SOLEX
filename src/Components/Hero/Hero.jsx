@@ -8,12 +8,10 @@ import { Autoplay, Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
-
-
 const Hero = () => {
 
     return (
-        <div className="px-4 md:px-10 py-6 mt-10 bg-white">
+        <div className="px-4 md:px-10 py-6 pt-30 bg-[#222222]">
 
             <Swiper
                 modules={[Autoplay, Pagination]}
@@ -33,27 +31,30 @@ const Hero = () => {
 
                     <SwiperSlide key={e.id}>
 
-                        <div className="relative bg-[#F1EEEE] rounded-2xl min-h-[600px] md:min-h-[550px] grid grid-cols-1 md:grid-cols-2 items-center overflow-hidden">
+                        <div className="relative bg-[#151515] border border-[#292929] rounded-2xl min-h-[600px] md:min-h-[550px] grid grid-cols-1 md:grid-cols-2 items-center overflow-hidden">
 
                             {/* Left Content */}
 
                             <div className="p-8 md:pl-16 md:pr-5 py-12 z-10">
 
-                                <p className="text-[#B38B51] uppercase tracking-[4px] text-xs md:text-sm font-semibold mb-5">
+                                <p className="text-[#C9A66B] uppercase tracking-[4px] text-xs md:text-sm font-semibold mb-5">
                                     Premium Footwear Collection
                                 </p>
 
-                                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#111] leading-[1.1] max-w-xl">
+                                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] max-w-xl">
                                     {e.title}
                                 </h1>
 
-                                <p className="text-gray-600 mt-6 text-base md:text-lg max-w-md leading-relaxed">
+                                <p className="text-gray-400 mt-6 text-base md:text-lg max-w-md leading-relaxed">
                                     {e.description}
                                 </p>
 
                                 {/* Shop Button */}
 
-                                <Link to='#products' className="mt-8 bg-black text-white w-fit px-9 py-4 rounded-xl font-semibold flex items-center gap-5 hover:bg-[#DAB77F] hover:text-black cursor-pointer transition duration-300">
+                                <Link
+                                    to='#products'
+                                    className="mt-8 bg-[#C9A66B] text-black w-fit px-9 py-4 rounded-xl font-semibold flex items-center gap-5 hover:bg-[#D8B982] hover:scale-105 cursor-pointer transition duration-300"
+                                >
                                     Shop Now
                                     <span className="text-xl">→</span>
                                 </Link>
@@ -65,7 +66,7 @@ const Hero = () => {
 
                             <div className="relative h-[320px] md:h-[550px] flex items-center justify-center p-5 md:p-8">
 
-                                <div className="absolute w-[260px] h-[260px] md:w-[400px] md:h-[400px] bg-[#DAB77F]/20 rounded-full blur-3xl">
+                                <div className="absolute w-[260px] h-[260px] md:w-[400px] md:h-[400px] bg-[#C9A66B]/15 rounded-full blur-3xl">
                                 </div>
 
                                 <img
@@ -76,9 +77,9 @@ const Hero = () => {
 
                                 {/* Product Badge */}
 
-                                <div className="absolute bottom-7 right-5 md:bottom-12 md:right-12 z-20 bg-[#111]/90 backdrop-blur-sm text-white px-5 py-4 rounded-xl shadow-xl">
+                                <div className="absolute bottom-7 right-5 md:bottom-12 md:right-12 z-20 bg-[#202020]/95 backdrop-blur-sm border border-[#C9A66B]/30 text-white px-5 py-4 rounded-xl shadow-xl">
 
-                                    <p className="text-gray-400 text-xs mb-1">
+                                    <p className="text-[#C9A66B] text-xs mb-1">
                                         {e.badgeTitle}
                                     </p>
 
@@ -97,6 +98,26 @@ const Hero = () => {
                 ))}
 
             </Swiper>
+
+            {/* Swiper Custom Styling */}
+            <style>
+                {`
+    .heroSwiper.swiper - pagination {
+    bottom: 18px!important;
+}
+
+                    .heroSwiper.swiper - pagination - bullet {
+    background: #777777;
+    opacity: 1;
+}
+
+                    .heroSwiper.swiper - pagination - bullet - active {
+    background: #C9A66B;
+    width: 25px;
+    border - radius: 10px;
+}
+`}
+            </style>
 
         </div>
     )

@@ -1,7 +1,13 @@
 
 import React, { useState } from 'react'
 import toast from 'react-hot-toast'
-import { IndianRupee, Trash2, ShoppingBag, Plus, Minus } from 'lucide-react'
+import {
+    IndianRupee,
+    Trash2,
+    ShoppingBag,
+    Plus,
+    Minus
+} from 'lucide-react'
 
 const Cart = ({ cart, setCart }) => {
 
@@ -34,10 +40,11 @@ const Cart = ({ cart, setCart }) => {
     }
 
     return (
-        <div className='w-full min-h-screen bg-gray-50 px-5 md:px-10 py-10'>
+        <div className='w-full min-h-screen bg-[#222222] text-white px-5 md:px-10 py-10'>
 
-            <h2 className='text-3xl font-bold mb-10 text-center text-gray-900'>
-                My Shopping Cart
+            {/* Heading */}
+            <h2 className='text-3xl font-bold mb-10 text-center text-white'>
+                My Shopping <span className='text-[#C9A66B]'>Cart</span>
             </h2>
 
             {/* Cart Products */}
@@ -46,11 +53,11 @@ const Cart = ({ cart, setCart }) => {
                 {cart.map((e) => (
                     <div
                         key={e.id}
-                        className='w-full md:w-1/2 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all p-4 flex flex-col sm:flex-row gap-5 relative'
+                        className='w-full md:w-1/2 bg-[#151515] border border-[#292929] rounded-2xl hover:border-[#C9A66B]/50 transition-all p-4 flex flex-col sm:flex-row gap-5 relative'
                     >
 
                         {/* Product Image */}
-                        <div className='w-full sm:w-44 h-44 shrink-0 overflow-hidden rounded-xl bg-gray-100'>
+                        <div className='w-full sm:w-44 h-44 shrink-0 overflow-hidden rounded-xl bg-[#202020]'>
                             <img
                                 src={e.image}
                                 alt={e.title}
@@ -61,19 +68,19 @@ const Cart = ({ cart, setCart }) => {
                         {/* Product Details */}
                         <div className='flex flex-col flex-1 justify-center gap-3 pr-12'>
 
-                            <h2 className='text-xl font-bold text-gray-900'>
+                            <h2 className='text-xl font-bold text-white'>
                                 {e.title}
                             </h2>
 
-                            <p className='text-sm text-gray-500'>
+                            <p className='text-sm text-gray-400'>
                                 {e.description}
                             </p>
 
-                            <span className='text-sm font-semibold text-[#C99B60]'>
+                            <span className='text-sm font-semibold text-[#C9A66B]'>
                                 {e.category}
                             </span>
 
-                            <span className='text-lg font-bold flex items-center text-[#C99B60]'>
+                            <span className='text-lg font-bold flex items-center text-[#C9A66B]'>
                                 <IndianRupee size={18} />
                                 {e.price}
                             </span>
@@ -83,25 +90,26 @@ const Cart = ({ cart, setCart }) => {
                         {/* Remove Button */}
                         <button
                             onClick={() => removeCart(e.id)}
-                            className='absolute top-4 right-4 p-2 rounded-full bg-gray-100 text-red-500 hover:bg-red-500 hover:text-white transition-all cursor-pointer'
+                            className='absolute top-4 right-4 p-2 rounded-full bg-[#252525] text-red-500 hover:bg-red-500 hover:text-white transition-all cursor-pointer'
                         >
                             <Trash2 size={22} />
                         </button>
 
+                        {/* Plus Button */}
                         <button
                             onClick={plusMessage}
-                            className='absolute bottom-4 right-4 p-2 rounded-full bg-gray-100 text-[#C99B60] hover:bg-[#C99B60] hover:text-white transition-all cursor-pointer'
+                            className='absolute bottom-4 right-4 p-2 rounded-full bg-[#252525] text-[#C9A66B] hover:bg-[#C9A66B] hover:text-black transition-all cursor-pointer'
                         >
                             <Plus size={22} />
                         </button>
 
+                        {/* Minus Button */}
                         <button
                             onClick={minusMessage}
-                            className='absolute bottom-4 right-20 p-2 rounded-full bg-gray-100 text-[#C99B60] hover:bg-[#C99B60] hover:text-white transition-all cursor-pointer'
+                            className='absolute bottom-4 right-20 p-2 rounded-full bg-[#252525] text-[#C9A66B] hover:bg-[#C9A66B] hover:text-black transition-all cursor-pointer'
                         >
                             <Minus size={22} />
                         </button>
-
 
                     </div>
                 ))}
@@ -112,9 +120,9 @@ const Cart = ({ cart, setCart }) => {
             {cart.length === 0 && (
                 <div className='flex flex-col items-center justify-center py-16 gap-4'>
 
-                    <ShoppingBag size={60} className='text-gray-300' />
+                    <ShoppingBag size={60} className='text-[#C9A66B]' />
 
-                    <h2 className='text-2xl font-bold text-gray-500'>
+                    <h2 className='text-2xl font-bold text-white'>
                         YOUR CART IS EMPTY!
                     </h2>
 
@@ -127,41 +135,41 @@ const Cart = ({ cart, setCart }) => {
 
             {/* Price Details */}
             {cart.length > 0 && (
-                <div className='w-full md:w-1/2 mx-auto mt-10 bg-white rounded-2xl shadow-sm p-6'>
+                <div className='w-full md:w-1/2 mx-auto mt-10 bg-[#151515] border border-[#292929] rounded-2xl p-6'>
 
-                    <h2 className='text-xl font-bold text-gray-900 mb-6'>
+                    <h2 className='text-xl font-bold text-white mb-6'>
                         Price Details
                     </h2>
 
-                    <div className='flex justify-between mb-4 text-gray-600'>
+                    <div className='flex justify-between mb-4 text-gray-400'>
                         <span>Total Products</span>
-                        <span className='font-semibold'>{cart.length}</span>
+                        <span className='font-semibold text-white'>{cart.length}</span>
                     </div>
 
-                    <div className='flex justify-between mb-4 text-gray-600'>
+                    <div className='flex justify-between mb-4 text-gray-400'>
                         <span>Subtotal</span>
 
-                        <span className='flex items-center'>
+                        <span className='flex items-center text-white'>
                             <IndianRupee size={15} />
                             {price}
                         </span>
                     </div>
 
-                    <div className='flex justify-between mb-4 text-gray-600'>
+                    <div className='flex justify-between mb-4 text-gray-400'>
                         <span>Shipping Fee</span>
 
-                        <span className={`font-semibold ${shippingFee === 0 ? 'text-green-600' : ''}`}>
-                            {shippingFee === 0 ? 'FREE' : `₹${shippingFee}`}
+                        <span className={`font - semibold ${shippingFee === 0 ? 'text-green-500' : 'text-white'} `}>
+                            {shippingFee === 0 ? 'FREE' : `₹${shippingFee} `}
                         </span>
                     </div>
 
-                    <div className='border-t pt-5 flex justify-between items-center'>
+                    <div className='border-t border-[#333333] pt-5 flex justify-between items-center'>
 
-                        <span className='text-lg font-bold text-gray-900'>
+                        <span className='text-lg font-bold text-white'>
                             Total Price
                         </span>
 
-                        <span className='text-xl font-bold text-[#C99B60] flex items-center'>
+                        <span className='text-xl font-bold text-[#C9A66B] flex items-center'>
                             <IndianRupee size={20} />
                             {totalPrice}
                         </span>
@@ -170,7 +178,7 @@ const Cart = ({ cart, setCart }) => {
 
                     <button
                         onClick={() => setShowReceipt(true)}
-                        className='w-full mt-6 py-3 rounded-full bg-[#E1B77F] text-white font-semibold hover:bg-[#C99B60] transition-all cursor-pointer'
+                        className='w-full mt-6 py-3 rounded-full bg-[#C9A66B] text-black font-semibold hover:bg-[#D8B982] transition-all cursor-pointer'
                     >
                         CheckOut
                     </button>
@@ -180,15 +188,15 @@ const Cart = ({ cart, setCart }) => {
 
             {/* Receipt */}
             {showReceipt && cart.length > 0 && (
-                <div className='w-full md:w-1/2 mx-auto mt-8 bg-white border-2 border-dashed border-[#C99B60] rounded-2xl p-6 shadow-md'>
+                <div className='w-full md:w-1/2 mx-auto mt-8 bg-[#151515] border-2 border-dashed border-[#C9A66B] rounded-2xl p-6'>
 
-                    <div className='text-center border-b pb-5 mb-5'>
+                    <div className='text-center border-b border-[#333333] pb-5 mb-5'>
 
-                        <h1 className='text-3xl font-bold text-gray-900'>
-                            SOLE<span className='text-[#C99B60]'>X</span>
+                        <h1 className='text-3xl font-bold text-white'>
+                            SOLE<span className='text-[#C9A66B]'>X</span>
                         </h1>
 
-                        <p className='text-sm text-gray-500 mt-2'>
+                        <p className='text-sm text-gray-400 mt-2'>
                             Shopping Receipt
                         </p>
 
@@ -198,11 +206,11 @@ const Cart = ({ cart, setCart }) => {
                     <div className='space-y-4'>
 
                         {cart.map((e) => (
-                            <div key={e.id} className='flex justify-between gap-3 text-gray-600'>
+                            <div key={e.id} className='flex justify-between gap-3 text-gray-300'>
 
                                 <span>{e.title}</span>
 
-                                <span className='flex items-center font-medium'>
+                                <span className='flex items-center font-medium text-white'>
                                     <IndianRupee size={14} />
                                     {e.price}
                                 </span>
@@ -210,23 +218,23 @@ const Cart = ({ cart, setCart }) => {
                             </div>
                         ))}
 
-                        <div className='border-t pt-4 space-y-3'>
+                        <div className='border-t border-[#333333] pt-4 space-y-3'>
 
-                            <div className='flex justify-between text-gray-600'>
+                            <div className='flex justify-between text-gray-400'>
                                 <span>Subtotal</span>
                                 <span>₹{price}</span>
                             </div>
 
-                            <div className='flex justify-between text-gray-600'>
+                            <div className='flex justify-between text-gray-400'>
                                 <span>Shipping</span>
                                 <span>
-                                    {shippingFee === 0 ? 'FREE' : `₹${shippingFee}`}
+                                    {shippingFee === 0 ? 'FREE' : `₹${shippingFee} `}
                                 </span>
                             </div>
 
-                            <div className='flex justify-between text-lg font-bold text-gray-900 border-t pt-4'>
+                            <div className='flex justify-between text-lg font-bold text-white border-t border-[#333333] pt-4'>
                                 <span>Total</span>
-                                <span className='text-[#C99B60]'>
+                                <span className='text-[#C9A66B]'>
                                     ₹{totalPrice}
                                 </span>
                             </div>
@@ -236,14 +244,14 @@ const Cart = ({ cart, setCart }) => {
                     </div>
 
                     {/* Authorized Signature */}
-                    <div className='mt-10 pt-5 border-t border-dashed text-right'>
+                    <div className='mt-10 pt-5 border-t border-dashed border-[#444444] text-right'>
 
-                        <p className='text-sm text-gray-500'>
+                        <p className='text-sm text-gray-400'>
                             Authorized Signature
                         </p>
 
                         <p
-                            className='text-3xl font-bold text-gray-800 mt-2'
+                            className='text-3xl font-bold text-[#C9A66B] mt-2'
                             style={{ fontFamily: 'Dancing Script, cursive' }}
                         >
                             Nitin Singh
@@ -251,7 +259,7 @@ const Cart = ({ cart, setCart }) => {
 
                     </div>
 
-                    <p className='text-center text-sm text-gray-400 mt-8'>
+                    <p className='text-center text-sm text-gray-500 mt-8'>
                         Thank you for shopping with SOLEX!
                     </p>
 

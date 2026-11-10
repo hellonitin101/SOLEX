@@ -52,7 +52,7 @@ const App = () => {
       {/* Popup */}
       <Popup />
 
-      <div className='pt-[110px]'>
+      <div>
         <Routes>
 
           <Route

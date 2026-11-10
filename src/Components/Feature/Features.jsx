@@ -28,26 +28,26 @@ const Features = () => {
     ]
 
     return (
-        <div className="w-full bg-white px-5 md:px-10 py-8">
+        <div className="w-full bg-[#222222] px-5 md:px-10 py-8">
 
             <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
 
                 {features.map((item, index) => (
                     <div
                         key={index}
-                        className="flex items-center gap-5 bg-gray-50 px-6 py-6 rounded-xl"
+                        className="flex items-center gap-5 bg-[#151515] border border-[#292929] px-6 py-6 rounded-xl hover:border-[#C9A66B] transition-all duration-300 group"
                     >
 
-                        <div className="text-gray-800">
+                        <div className="text-[#C9A66B] group-hover:scale-110 transition-transform duration-300">
                             {item.icon}
                         </div>
 
                         <div>
-                            <h3 className="text-base font-semibold text-gray-900">
+                            <h3 className="text-base font-semibold text-white">
                                 {item.title}
                             </h3>
 
-                            <p className="text-sm text-gray-500 mt-1">
+                            <p className="text-sm text-gray-400 mt-1">
                                 {item.description}
                             </p>
                         </div>
